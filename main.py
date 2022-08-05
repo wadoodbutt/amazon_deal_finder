@@ -59,7 +59,7 @@ best_deals.sort()
 
 # Creates the message with the best deals and their URLs
 summarized_data = ""
-for x in range(0, 10):
+for x in range(0, len(best_deals) if len(best_deals) < 10 else 10):
     summarized_data += f"${best_deals[x]} : {data[str(best_deals[x])]}\n"
 
 # Sends the message

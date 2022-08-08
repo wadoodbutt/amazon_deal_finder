@@ -54,7 +54,7 @@ data_results = response.json()["results"][0]["content"]["search_results"]
 
 data = {result["min_price"]: result["url"] for result in data_results}
 
-best_deals = [float(price) for price in data.keys()]
+best_deals = [float(price) for price in data.keys() if price is not None]
 best_deals.sort()
 
 # Creates the message with the best deals and their URLs
